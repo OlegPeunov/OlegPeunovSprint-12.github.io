@@ -1,0 +1,32 @@
+{
+  "name": "OlegPeunovSprint-12.github.io",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev" : "nodemon app.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegPeunov/OlegPeunovSprint-12.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlegPeunov/OlegPeunovSprint-12.github.io/issues"
+  },
+  "homepage": "https://github.com/OlegPeunov/OlegPeunovSprint-12.github.io#readme",
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "nodemon": "^2.0.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "express": "^4.17.1"
+  }
+}
