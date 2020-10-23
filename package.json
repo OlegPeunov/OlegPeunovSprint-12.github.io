@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/OlegPeunov/OlegPeunovSprint-12.github.io#readme",
   "devDependencies": {
-    "eslint": "^7.11.0",
     "nodemon": "^2.0.5"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "eslint": "^7.11.0"
   }
 }
