@@ -1,13 +1,21 @@
 module.exports = {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+
     "env": {
         "browser": true,
-        "es2021": true
+        "amd": true,
+        "node": true,
+        "es6": true
+
     },
-    "extends": "airbnb-base",
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+
     "rules": {
     }
 };

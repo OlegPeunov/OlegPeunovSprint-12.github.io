@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path')
-const { PORT = 3000, BASE_PATH} = process.env;
+const { PORT = 3000} = process.env;
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 const bodyParser = require('body-parser');

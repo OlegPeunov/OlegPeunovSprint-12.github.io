@@ -1,7 +1,7 @@
 class Api{
   constructor(config){
     this.url = config.url
-    this.authorization= config.authorization
+    this.authorization = config.authorization
   }
 
    _getResponseData(res){
@@ -29,7 +29,6 @@ class Api{
     })
       .then(this._getResponseData)
   }
-
 
 
   patchUserData=(name,job)=>{
