@@ -1,19 +1,15 @@
 const router = require('express').Router();
-const path = require('path');
-const fs = require('fs');
 
+const fs = require('fs').promises;
 
 router.get('/cards', (req, res) => {
-
-  const filePath = path.join(__dirname, '../data/data.json');
-  const fileReader= fs.createReadStream(filePath, {encoding: 'utf8'})
-
-  res.writeHead(200, {
-    'Content-Type': 'text/plain'
-  });
-
-  fileReader.pipe(res);
+  fs.readFile('./data/data.json', 'utf8')
+    .then((data) => {
+      res.status(200).json(JSON.parse(data));
+    })
+    .catch((err) => {
+      res.status(404).json({ message: `Ошибка при чтения файла: ${err}` });
+    });
 });
-
 
 module.exports = router;

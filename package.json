@@ -20,10 +20,7 @@
   "homepage": "https://github.com/OlegPeunov/OlegPeunovSprint-12.github.io#readme",
   "devDependencies": {
     "eslint": "^7.11.0",
-    "eslint-plugin-react": "^7.21.5",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "babel-eslint": "^10.1.0",
     "nodemon": "^2.0.5"
   },
   "dependencies": {

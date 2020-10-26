@@ -1,40 +1,29 @@
 const router = require('express').Router();
-const path = require('path');
-const fs = require('fs');
 
+const fs = require('fs').promises;
 
+const users = require('../data/users.json');
 
-
-router.get('/users', (users, res) => {
-  const filePath = path.join(__dirname, '../data/users.json');
-  const fileReader= fs.createReadStream(filePath, {encoding: 'utf8'})
-
-  res.writeHead(200, {
-    'Content-Type': 'text/plain'
-  });
-
-  fileReader.pipe(res);
+router.get('/users', (req, res) => {
+  fs.readFile('./data/users.json', 'utf8')
+    .then((data) => {
+      res.status(200).json(JSON.parse(data));
+    })
+    .catch((err) => {
+      res.status(404).json({ message: `Ошибка при чтения файла: ${err}` });
+    });
 });
 
+router.get('/users/:id', (req, res) => {
+  // eslint-disable-next-line no-underscore-dangle
+  const element = users.find((el) => el._id === req.params.id);
 
-router.get('/users/:id',(req, res) => {
-
-  const users = require('../data/users.json')
-
-  const element = users.find(el=>el._id === req.params.id)
-
-  if(element === undefined) {
-    res.status(404).send(`{ "message": "Нет пользователя с таким id"}`);
+  if (element === undefined) {
+    res.status(404).json({ message: 'Нет пользователя с таким id' });
     return;
   }
 
-  res.status(200).send(element)
-})
-
-
+  res.status(200).send(element);
+});
 
 module.exports = router;
-
-
-
-
